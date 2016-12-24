@@ -81,9 +81,12 @@ WSGI_APPLICATION = 'show_me_the_geo_json.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+# Sqlite SpatiaLite Library
+SPATIALITE_LIBRARY_PATH='/usr/local/lib/mod_spatialite.dylib'
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.contrib.gis.db.backends.spatialite',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
